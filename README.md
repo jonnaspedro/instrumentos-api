@@ -45,4 +45,5 @@ A API foi projetada para ser clara, modular e de fácil entendimento, servindo c
 
 ### 1️⃣ Instalar dependências
 ```bash
-npm install
+npm install express
+
