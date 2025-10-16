@@ -24,6 +24,8 @@ A API foi projetada para ser clara, modular e de fácil entendimento, servindo c
 - **Express.js**
 - **JavaScript (ES6+)**
 - **JSON como formato de dados**
+- **HTML5**
+- **CSS**
 
 ## 🧭 Rotas Principais
 
@@ -40,8 +42,6 @@ A API foi projetada para ser clara, modular e de fácil entendimento, servindo c
 | `GET` | `/instrumentos/ultimo` | Retorna o último instrumento cadastrado |
 | `POST` | `/instrumentos/lote` | Cadastra vários instrumentos de uma vez |
 | `GET` | `/instrumentos/estatisticas` | Retorna estatísticas (como média de preço) |
-
-## 🧰 Execução Local
 
 ### 1️⃣ Instalar dependências
 ```bash
