@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API de Instrumentos Musicais</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #C0C0C0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1C1C1C;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #000000;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    button {
+      background-color: #1C1C1C;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #1C1C1C;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      border: 1px solid #C0C0C0;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #C0C0C0;
+    }
+
+    .estatisticas {
+      margin-top: 1.5rem;
+      background: #DCDCDC;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1> API de Instrumentos Musicais </h1>
+  </header>
+
+  <main>
+    <h2>Lista de Instrumentos</h2>
+
+    <div style="text-align:center;">
+      <button onclick="carregarInstrumentos()">Carregar Instrumentos</button>
+      <button onclick="carregarEstatisticas()">Ver Estatísticas</button>
+    </div>
+
+    <table id="tabela">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Preço (R$)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="estatisticas" id="estatisticas"></div>
+  </main>
+
+  <script>
+    const API_URL = "http://localhost:3000/instrumentos";
+
+    async function carregarInstrumentos() {
+      const resp = await fetch(API_URL);
+      const data = await resp.json();
+
+      const tbody = document.querySelector("#tabela tbody");
+      tbody.innerHTML = "";
+
+      data.forEach(i => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${i.id}</td>
+          <td>${i.nome}</td>
+          <td>${i.tipo}</td>
+          <td>${i.preco.toFixed(2)}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function carregarEstatisticas() {
+      const resp = await fetch(API_URL + "/estatisticas");
+      const stats = await resp.json();
+
+      const div = document.getElementById("estatisticas");
+      div.innerHTML = `
+        <h3>📊 Estatísticas</h3>
+        <p><b>Total:</b> ${stats.total}</p>
+        <p><b>Soma dos preços:</b> R$ ${stats.soma.toFixed(2)}</p>
+        <p><b>Média de preço:</b> R$ ${stats.mediaPreco.toFixed(2)}</p>
+        <p><b>Menor preço:</b> R$ ${stats.menorPreco}</p>
+        <p><b>Maior preço:</b> R$ ${stats.maiorPreco}</p>
+      `;
+    }
+  </script>
+
+</body>
+<footer>
+    <footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h2>DiabPredict Instruments API</h2>
+      <p>Aplicação desenvolvida por <strong>Jonnas</strong> como parte do projeto de estudo em APIs REST com Node.js e Express.</p>
+    </div>
+
+    <div class="footer-section links">
+      <h3> Navegação </h3>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Instrumentos</a></li>
+        <li><a href="#">Estatísticas</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact">
+      <h3> Contato </h3>
+    <p>Email: <a href="mailto:jpbg@discente.edu.br" style="color: #fff;">jpbg@discente.edu.br</a></p>
+    <p>GitHub: <a href="https://github.com/jonnaspedro" style="color: #fff;" target="_blank">github.com/jonnaspedro</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 DiabPredict Instruments API — Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #1C1C1C;
+    color: #f1f1f1;
+    padding: 40px 0 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+  }
+
+  .footer-section h2,
+  .footer-section h3 {
+    color: #f1f1f1;
+    margin-bottom: 10px;
+  }
+
+  .footer-section p {
+    color: #f1f1f1;
+    line-height: 1.6;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer-section ul li a {
+    text-decoration: none;
+    color: #f1f1f1;
+    transition: color 0.3s;
+  }
+
+  .footer-section ul li a:hover {
+    color: #f1f1f1;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    margin-top: 30px;
+    padding-top: 10px;
+    color: #999;
+    font-size: 0.9em;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+</footer>
+</html>

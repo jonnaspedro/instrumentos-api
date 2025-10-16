@@ -1,0 +1,19 @@
+{
+  "name": "api-instrumentos",
+  "version": "1.0.0",
+  "description": "API para gerenciar instrumentos musicais. Desenvolvido por Jonnas Pedro.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Jonnas Pedro",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
