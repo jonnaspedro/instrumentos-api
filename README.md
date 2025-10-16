@@ -24,8 +24,6 @@ A API foi projetada para ser clara, modular e de fácil entendimento, servindo c
 - **Express.js**
 - **JavaScript (ES6+)**
 - **JSON como formato de dados**
-- **HTML5**
-- **CSS**
 
 ## 🧭 Rotas Principais
 
