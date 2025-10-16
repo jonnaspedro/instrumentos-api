@@ -3,25 +3,19 @@
 API RESTful desenvolvida em **Node.js** e **Express** para o gerenciamento de instrumentos musicais.  
 Permite realizar **CRUD completo**, **filtros personalizados**, **cadastro em lote** e **geração de estatísticas** sobre os instrumentos cadastrados.
 
----
-
 ## 🧾 Informações do Projeto
 
-- **🧑‍💻 Desenvolvedor:** Jonnas Pedro  
-- **🏫 Turma:** 2º Ano B — Curso Técnico em Desenvolvimento de Sistemas  
-- **📚 Disciplina:** Programação Web  
-- **🧩 Recurso Utilizado:** Instrumentos Musicais  
-- **🧍‍♂️ Tipo de Projeto:** Individual  
-- **💯 Valor da Atividade:** 4 pontos  
-
----
+- ** Desenvolvedor:** Jonnas Pedro  
+- ** Turma:** 2º Ano B — Curso Técnico em Desenvolvimento de Sistemas  
+- ** Disciplina:** Desenvolvimento Web  
+- ** Recurso Utilizado:** Instrumentos Musicais  
+- ** Tipo de Projeto:** Individual  
+- ** Valor da Atividade:** 4 pontos  
 
 ## 💡 Objetivo
 
 Aplicar conceitos de **APIs RESTful** utilizando o framework **Express.js**, explorando **rotas**, **parâmetros**, **métodos HTTP** e **manipulação de dados em memória**.  
 O projeto é claro, modular e fácil de entender, servindo como exemplo prático de **backend em JavaScript**.
-
----
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -31,8 +25,6 @@ O projeto é claro, modular e fácil de entender, servindo como exemplo prático
 - JSON (como formato de dados)  
 - CORS (para comunicação com o front-end)  
 - Nodemon (para desenvolvimento)
-
----
 
 ## 🧭 Rotas Principais
 
@@ -50,7 +42,6 @@ O projeto é claro, modular e fácil de entender, servindo como exemplo prático
 | **POST** | `/instrumentos/lote` | Cadastra vários instrumentos de uma vez |
 | **GET** | `/instrumentos/estatisticas` | Retorna estatísticas (média, menor e maior preço) |
 
----
 
 ## 🧰 Execução Local
 
