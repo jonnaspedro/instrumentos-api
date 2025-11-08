@@ -5,12 +5,12 @@ Permite realizar **CRUD completo**, **filtros personalizados**, **cadastro em lo
 
 ## 🧾 Informações do Projeto
 
-- ** Desenvolvedor:** Jonnas Pedro  
-- ** Turma:** 2º Ano B — Curso Técnico em Desenvolvimento de Sistemas  
-- ** Disciplina:** Desenvolvimento Web  
-- ** Recurso Utilizado:** Instrumentos Musicais  
-- ** Tipo de Projeto:** Individual  
-- ** Valor da Atividade:** 4 pontos  
+- ** Desenvolvedor: ** Jonnas Pedro  
+- ** Turma: ** 2º Ano B — Curso Técnico em Desenvolvimento de Sistemas  
+- ** Disciplina: ** Desenvolvimento Web  
+- ** Recurso Utilizado: ** Instrumentos Musicais  
+- ** Tipo de Projeto: ** Individual  
+- ** Valor da Atividade: ** 4 pontos  
 
 ## 💡 Objetivo
 
